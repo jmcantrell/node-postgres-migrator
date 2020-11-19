@@ -1,28 +1,31 @@
 {
-  "name": "postgres-migrator",
-  "version": "0.0.1",
-  "description": "Simple database migrations for PostgreSQL.",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/jmcantrell/node-postgres-migrator.git"
-  },
-  "keywords": [],
-  "author": "Jeremy Cantrell <jmcantrell@gmail.com>",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/jmcantrell/node-postgres-migrator/issues"
-  },
-  "homepage": "https://github.com/jmcantrell/node-postgres-migrator#readme",
-  "peerDependencies": {
-    "postgres": "1.x"
-  },
-  "devDependencies": {
-    "ava": "^3.13.0",
-    "eslint": "^7.13.0",
-    "prettier": "^2.1.2"
-  }
+	"name": "postgres-migrator",
+	"version": "0.0.1",
+	"description": "Simple database migrations for PostgreSQL.",
+	"main": "index.js",
+	"type": "module",
+	"scripts": {
+		"test": "ava -v",
+		"lint": "eslint .",
+		"format": "prettier --write ."
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/jmcantrell/node-postgres-migrator.git"
+	},
+	"keywords": [],
+	"author": "Jeremy Cantrell <jmcantrell@gmail.com>",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/jmcantrell/node-postgres-migrator/issues"
+	},
+	"homepage": "https://github.com/jmcantrell/node-postgres-migrator#readme",
+	"peerDependencies": {
+		"postgres": "1.x"
+	},
+	"devDependencies": {
+		"ava": "^3.13.0",
+		"eslint": "^7.13.0",
+		"prettier": "^2.1.2"
+	}
 }
