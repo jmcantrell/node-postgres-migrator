@@ -23,7 +23,7 @@
 		"migrate"
 	],
 	"author": "Jeremy Cantrell <jmcantrell@gmail.com> (https://github.com/jmcantrell)",
-	"license": "ISC",
+	"license": "Unlicense",
 	"bugs": {
 		"url": "https://github.com/jmcantrell/node-postgres-migrator/issues"
 	},
