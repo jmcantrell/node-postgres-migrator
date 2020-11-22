@@ -1,19 +1,28 @@
 {
 	"name": "postgres-migrator",
-	"version": "0.0.1",
+	"version": "1.0.0",
 	"description": "Simple database migrations for PostgreSQL.",
 	"main": "index.js",
 	"scripts": {
 		"test": "ava -v",
 		"lint": "eslint .",
-		"format": "prettier --write ."
+		"format": "prettier --write .",
+		"pretest": "npm run format && npm run lint"
 	},
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/jmcantrell/node-postgres-migrator.git"
 	},
-	"keywords": [],
-	"author": "Jeremy Cantrell <jmcantrell@gmail.com>",
+	"keywords": [
+		"postgresql",
+		"postgres",
+		"sql",
+		"database",
+		"migrations",
+		"migration",
+		"migrate"
+	],
+	"author": "Jeremy Cantrell <jmcantrell@gmail.com> (https://github.com/jmcantrell)",
 	"license": "ISC",
 	"bugs": {
 		"url": "https://github.com/jmcantrell/node-postgres-migrator/issues"

@@ -1,0 +1,7 @@
+.envrc
+.eslintrc.json
+.nvmrc
+.prettierignore
+.prettierrc.json
+docker-compose.yaml
+node_modules
