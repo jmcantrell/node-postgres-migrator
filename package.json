@@ -1,6 +1,6 @@
 {
 	"name": "postgres-migrator",
-	"version": "1.0.2",
+	"version": "1.0.3",
 	"description": "Simple database migrations for PostgreSQL.",
 	"main": "index.js",
 	"scripts": {
