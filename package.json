@@ -3,7 +3,6 @@
 	"version": "0.0.1",
 	"description": "Simple database migrations for PostgreSQL.",
 	"main": "index.js",
-	"type": "module",
 	"scripts": {
 		"test": "ava -v",
 		"lint": "eslint .",
