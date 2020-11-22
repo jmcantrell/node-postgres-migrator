@@ -191,9 +191,10 @@ const postgres = require("postgres");
 const postgresMigrator = require("postgres-migrator");
 
 const sql = postgres(process.env.POSTGRES_URL);
+const migrator = createMigrator(sql, { logger: console });
 
-postgresMigrator(sql)
-	.then((migrator) => migrator.migrate())
+migrator
+	.migrate()
 	.catch((error) => {
 		logger.error(error);
 		process.exit(1);
