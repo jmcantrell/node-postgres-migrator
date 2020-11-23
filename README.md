@@ -17,7 +17,7 @@ const postgres = require("postgres");
 const postgresMigrator = require("postgres-migrator");
 
 const sql = postgres();
-const migrator = postgresMigrator(sql, directory);
+const migrator = postgresMigrator(sql);
 
 const migrated = await migrator.apply();
 ```
