@@ -19,7 +19,7 @@ const postgresMigrator = require("postgres-migrator");
 const sql = postgres();
 const migrator = postgresMigrator(sql, directory);
 
-const migrated = await migrator.migrate();
+const migrated = await migrator.apply();
 ```
 
 ## Behavior
@@ -39,7 +39,7 @@ As you would expect, only unapplied migrations will be applied.
 Each migration is run in a database transaction. Any errors
 encountered are left uncaught and migration ceases at that point.
 Migrations completed previously are left applied, and once the error
-is corrected, `migrator.migrate` can be run again and migration will
+is corrected, `migrator.apply` can be run again and migration will
 continue from the last migration that was successfully applied.
 
 Each migrator instance represents a directory of migration files. If
@@ -95,8 +95,6 @@ module.exports = (sql) => {
 
 ### Creating a migrator object
 
-#### Usage:
-
 ```js
 const migrator = postgresMigrator(sql, { ...options });
 ```
@@ -127,25 +125,24 @@ is about to be applied.
 
 ### Applying migrations
 
-#### Usage
-
 ```js
-const migrated = await migrator.migrate();
+const migrated = await migrator.apply();
 ```
 
 If needed, the return value is an array of migration files that were
 applied during that function call.
 
-### Getting applied migrations
-
-#### Usage
+### Testing if a file has been migrated
 
 ```js
-const migrated = await migrator.migrated();
+const exists = await migrator.has(filename);
 ```
 
-The return value is an array of migration files that have been applied
-since the migration tracking table was created.
+### Getting all migrated files
+
+```js
+const migrated = await migrator.all();
+```
 
 ## Recommendations
 
@@ -194,7 +191,7 @@ const sql = postgres(process.env.POSTGRES_URL);
 const migrator = createMigrator(sql, { logger: console });
 
 migrator
-	.migrate()
+	.apply()
 	.catch((error) => {
 		logger.error(error);
 		process.exit(1);
